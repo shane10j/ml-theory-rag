@@ -13,9 +13,14 @@ def load_gutenberg_data():
 
 
 #Tokenize
-def tokenize(text):
+def tokenize_helper(text):
     return text.split()
 
+def tokenize(texts):
+    tokenized = []
+    for text in texts:
+        tokenized += tokenize_helper(text)
+    return tokenized
 
 #Chunking the tokensj
 def chunk(tokens, size, overlap): #Overlap to deal with boundary problem
